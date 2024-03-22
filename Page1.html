@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Page1</title>
+</head>
+
+<style>
+  html {
+    scroll-behavior: smooth 2s;
+  }
+
+  .bg {
+    width: 450px;
+    margin: 50px auto 0;
+    font-size: 98px;
+    font-family: cursive;
+    text-align: center;
+    padding-top: 10px;
+    overflow: hidden;
+    background: url(../Pic/1背景.png) no-repeat center;
+    background-size: cover;
+    /* background-color: rgb(254, 182, 242); */
+  }
+
+  .one span {
+    color: #000;
+  }
+
+  .one {
+    text-align: center;
+    color: red;
+    font-size: 20px;
+    animation: bigger 3s forwards;
+    margin-bottom: 10px;
+  }
+
+  .two {
+    opacity: 0;
+    color: lightgreen;
+    animation: appeal 0.5s 3.5s forwards linear;
+  }
+
+  .three {
+    opacity: 0;
+    animation: appeal 2s 5.5s forwards linear;
+  }
+
+  .four {
+    opacity: 0;
+    color: hotpink;
+    animation: appeal 0.5s 8s forwards linear;
+  }
+
+  .five {
+    opacity: 0;
+    animation: move_lf 3s 9s forwards linear;
+  }
+
+  .six {
+    opacity: 0;
+    border-radius: 15px;
+    text-shadow: 1px 2px black;
+    background-color: rgb(3, 3, 3, 0.6);
+    animation: appeal 2.5s 13s forwards linear;
+  }
+
+  .six span {
+    color: white;
+    text-shadow: 4px 4px 4px 4px white;
+  }
+
+  .seven {
+    opacity: 0;
+    animation: move_lf 6s 17s forwards ease-out;
+  }
+
+  @keyframes bigger {
+    0% {
+      transform: rotateZ(-180deg) scale(1);
+    }
+
+    100% {
+      transform: rotateZ(0deg) scale(2.2);
+    }
+  }
+
+  @keyframes appeal {
+    70% {
+      opacity: 0.5;
+    }
+
+    100% {
+      opacity: 1;
+    }
+  }
+
+  @keyframes move_lf {
+    0% {
+      opacity: 1;
+      transform: translateX(400px);
+    }
+
+    100% {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+</style>
+
+<body>
+  <div class="bg">
+    <div class="one"><span>我是</span><b>中国共产党</b></div>
+    <div class="two">1921年的那个夏天</div>
+    <div class="three">我诞生于嘉兴南湖的红船上</div>
+    <div class="four">那时国家危亡，人民苦难</div>
+    <div class="five">我踏上了一条充满艰辛和苦难的路</div>
+    <div class="six">在黑暗中摸索,寻找着<span>光明</span>的方向</div>
+    <div class="seven">从此开始了我的漫漫征途</div>
+  </div>
+  <button>刷新</button>
+
+  <script>
+    const bg = document.querySelector('.bg')
+    document.querySelector('button').addEventListener('click', function () {
+      location.href = "./Index.html"
+      console.log(111);
+    });
+    // (() => {
+    //   setTimeout(() => {
+    //     location.href = "./Page2.html"
+    //   }, 25000);
+    // })()
+    setTimeout(function () {
+      document.documentElement.scrollTop = 500
+    }, 5000)
+
+  </script>
+</body>
+
+</html>
